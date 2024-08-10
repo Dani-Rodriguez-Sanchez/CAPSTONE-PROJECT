@@ -1,0 +1,94 @@
+
+
+.App {
+  text-align: center;
+ 
+}
+
+.hero {
+  height: 50px;
+  background-color: rgb(162, 152, 152);
+  border-top: 0;
+  margin: 0;
+}
+
+.presentacion {
+  height: 600px;
+  background-color: brown;
+}
+.localizacion {
+  height: 600px;
+  background-color: yellow;
+}
+
+.servicios {
+  height: 600px;
+  background-color: blue;
+}
+
+.galeria {
+  height: 600px;
+  background-color: brown;
+}
+
+.contacto {
+  height: 600px;
+  background-color: lightgrey;
+}
+
+.buttons {
+  background-color: lightgrey;
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline;
+  font-size: 16px;
+  margin: 2px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+ 
+}
+
+.buttons:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+/* scroll to top button */
+.top-btn-position {
+  position: fixed;
+  bottom: 15px;
+  right: 20px;
+}
+
+.top-btn-style {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+}
+
+.top-btn-style:hover {
+  animation: none;
+  background-color: #333;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+@media (max-width: 768px){
+  .hero {
+    height: 280px;
+   
+  }
+  .buttons {
+    display: block;
+    font-size: 1.5rem;
+    
+  }
+    }
+
