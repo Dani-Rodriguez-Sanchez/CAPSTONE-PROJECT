@@ -2,12 +2,18 @@
 import React, { useRef } from "react";
 import "./App.css";
 import ScrollToTop from "./components/ScrollToTop";
+import { withNamespaces } from "react-i18next";
+import i18n from "./i18n";
+import { FloatingWhatsApp } from "@carlos8a/react-whatsapp-floating-button";
 
-function App() {
+function App({ t }) {
   const localizacionRef = useRef(null);
   const serviciosRef = useRef(null);
   const galeriaRef = useRef(null);
   const contactoRef = useRef(null);
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
 
   const scrollToSection = (elementRef) => {
     window.scrollTo({
@@ -24,36 +30,51 @@ function App() {
             onClick={() => scrollToSection(localizacionRef)}
             className="buttons"
           >
-            Localizacion
+            {t("localization")}
           </li>
           <li onClick={() => scrollToSection(serviciosRef)} className="buttons">
-            Servicios
+            {t("services")}
           </li>
           <li onClick={() => scrollToSection(galeriaRef)} className="buttons">
-            Galeria
+            {t("gallery")}
           </li>
           <li onClick={() => scrollToSection(contactoRef)} className="buttons">
-            Contacto
+            {t("contact")}
           </li>
         </ul>
       </div>
-      <div className="presentacion">
-        <h3>Presentacion</h3>
+      <div>
+        <button onClick={() => changeLanguage("es")}>es</button>
+        <button onClick={() => changeLanguage("en")}>en</button>
       </div>
+      <div className="presentacion"></div>
       <div ref={localizacionRef} className="localizacion">
-        <h3>Localizacion</h3>
+        <h3>{t("localization")}</h3>
       </div>
       <div ref={serviciosRef} className="servicios">
-        <h3>Servicios</h3>
+        {t("services")}
       </div>
       <div ref={galeriaRef} className="galeria">
-        <h3>Galeria</h3>
+        {t("gallery")}
       </div>
       <div ref={contactoRef} className="contacto">
-        <h3>Contacto</h3>
+        {t("contact")}
+      </div>
+      <h1>{t("Welcome to React")}</h1>
+
+      <div>
+        <FloatingWhatsApp
+          phoneNumber="0000000000"
+          accountName="Albergue Las Garzas"
+          avatar="/images/avatar.webp"
+          initialMessageByServer={t("Hi there! How can I assist you?")}
+          statusMessage={t("Available")}
+          placeholder={t("Write here...")}
+          allowEsc={true}
+        />
       </div>
     </div>
   );
 }
 
-export default App;
+export default withNamespaces()(App);

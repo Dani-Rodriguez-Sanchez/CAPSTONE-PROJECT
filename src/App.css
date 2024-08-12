@@ -59,13 +59,13 @@
 /* scroll to top button */
 .top-btn-position {
   position: fixed;
-  bottom: 15px;
-  right: 20px;
+  bottom: 30px;
+  left: 30px;
 }
 
 .top-btn-style {
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
   border: 2px solid #333;
   background-color: #fff;
