@@ -1,10 +1,15 @@
-//import logo from './logo.svg';
+import logo from "./images/logo.svg";
 import React, { useRef } from "react";
-import "./App.css";
+import "./styles/App.css";
+import "./styles/Navbar.css";
+//import { Routes, Route, useNavigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import { withNamespaces } from "react-i18next";
 import i18n from "./i18n";
 import { FloatingWhatsApp } from "@carlos8a/react-whatsapp-floating-button";
+import Map from "./components/Map.js";
+import Navbar from "./components/Navmap.js";
+import logo_cranes from "./images/cranes.png";
 
 function App({ t }) {
   const localizacionRef = useRef(null);
@@ -24,7 +29,15 @@ function App({ t }) {
   return (
     <div className="App">
       <ScrollToTop />
-      <div className="hero">
+
+      <div className="Navbar">
+        <img className="logo" src={logo} alt="Logo" />
+
+        <div className="languageButton">
+          <button onClick={() => changeLanguage("es")}>es</button>
+          <button onClick={() => changeLanguage("en")}>en</button>
+        </div>
+
         <ul>
           <li
             onClick={() => scrollToSection(localizacionRef)}
@@ -43,14 +56,27 @@ function App({ t }) {
           </li>
         </ul>
       </div>
-      <div>
-        <button onClick={() => changeLanguage("es")}>es</button>
-        <button onClick={() => changeLanguage("en")}>en</button>
+
+      <div className="presentacion">
+        <div className="presentacion_logo_text">
+          <img className="logo_cranes" src={logo_cranes} alt="Logo_cranes" />
+          <div class="box_text_presentation">
+            <h1>Albergue Las Grullas</h1>
+            <h2>{t("welcome")}</h2>
+            <h3>{t("presentation")}</h3>
+          </div>
+        </div>
       </div>
-      <div className="presentacion"></div>
+
       <div ref={localizacionRef} className="localizacion">
-        <h3>{t("localization")}</h3>
+        <div classname="mapa">
+          <div className="texto-mapa">
+            <h1>{t("where")}</h1>
+          </div>
+          <Map />
+        </div>
       </div>
+
       <div ref={serviciosRef} className="servicios">
         {t("services")}
       </div>
@@ -64,9 +90,8 @@ function App({ t }) {
 
       <div>
         <FloatingWhatsApp
-          phoneNumber="0000000000"
+          phoneNumber="635723824"
           accountName="Albergue Las Garzas"
-          avatar="/images/avatar.webp"
           initialMessageByServer={t("Hi there! How can I assist you?")}
           statusMessage={t("Available")}
           placeholder={t("Write here...")}
