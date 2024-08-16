@@ -16,7 +16,6 @@
   background-image: url(../images/difuminado.webp);
   background-repeat: no-repeat;
   background-position: center center;
-  height: 600px;
   background-size: cover;
 }
 
@@ -30,16 +29,19 @@
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  
 }
 
 .box_text_presentation {
   margin: 30px;
-  height: 300px;
-  width: 300px;
+  line-height: 40px;
+  height: 250px;
+  width: 350px;
   background-color: rgba(243, 109, 109, 0.344);
   display: flex;
   justify-content: space-around;
   flex-direction: column; 
+  padding: 5px;
 }
 
 .logo_cranes {
@@ -69,9 +71,23 @@ white;
   margin: 0;
 }
 .servicios {
-  height: 600px;
-  background-color: blue;
+    height: 450px;
+    background-image: linear-gradient(rgb(28, 28, 28), rgb(145, 145, 143));
+    color: rgb(255, 255, 255);
 }
+
+.services-icons {
+  display: flex;
+  flex-direction: row; 
+  padding: 100px; 
+  align-items: center;
+  justify-content: space-between;
+  
+  
+}
+
+
+
 
 .galeria {
   height: 600px;
@@ -146,6 +162,21 @@ white;
   .presentacion_logo_text {
   
     flex-direction: column;  
+  }
+
+  .servicios {
+    height: 600px;
+    background-image: linear-gradient(rgb(28, 28, 28), rgb(105, 105, 104));
+    color: white;
+    font-size: 18px;
+    text-align: center
+  }
+  .services-icons {
+    display: flex;
+  flex-direction: column; 
+  padding: 40px; 
+  gap: 10px;
+    
   }
 
 }

@@ -1,5 +1,6 @@
 import logo from "./images/logo.svg";
 import React, { useRef } from "react";
+import { useState } from "react";
 import "./styles/App.css";
 import "./styles/Navbar.css";
 //import { Routes, Route, useNavigate } from "react-router-dom";
@@ -8,8 +9,14 @@ import { withNamespaces } from "react-i18next";
 import i18n from "./i18n";
 import { FloatingWhatsApp } from "@carlos8a/react-whatsapp-floating-button";
 import Map from "./components/Map.js";
-import Navbar from "./components/Navmap.js";
 import logo_cranes from "./images/cranes.png";
+import {
+  MdLocalLaundryService,
+  MdOutlineWifi,
+  MdElectricBike,
+  MdCoffee,
+} from "react-icons/md";
+import Modal from "./components/modal";
 
 function App({ t }) {
   const localizacionRef = useRef(null);
@@ -26,6 +33,12 @@ function App({ t }) {
       behavior: "smooth",
     });
   };
+
+  const [estadoModal1, cambiarEstadoModal1] = useState(false);
+  const [estadoModal2, cambiarEstadoModal2] = useState(false);
+  const [estadoModal3, cambiarEstadoModal3] = useState(false);
+  const [estadoModal4, cambiarEstadoModal4] = useState(false);
+
   return (
     <div className="App">
       <ScrollToTop />
@@ -78,8 +91,50 @@ function App({ t }) {
       </div>
 
       <div ref={serviciosRef} className="servicios">
-        {t("services")}
+        <h1>{t("services")}</h1>
+        <div className="services-icons">
+          <div>
+            <button onClick={() => cambiarEstadoModal1(!estadoModal1)}>
+              <MdLocalLaundryService size={100} />
+            </button>
+          </div>
+
+          <div>
+            <button onClick={() => cambiarEstadoModal2(!estadoModal2)}>
+              <MdOutlineWifi size={100} />
+            </button>
+          </div>
+
+          <div>
+            <button onClick={() => cambiarEstadoModal3(!estadoModal3)}>
+              <MdElectricBike size={100} />
+            </button>
+          </div>
+
+          <div>
+            <button onClick={() => cambiarEstadoModal4(!estadoModal4)}>
+              <MdCoffee size={100} />
+            </button>
+          </div>
+        </div>
+
+        <Modal estado={estadoModal1} cambiarEstado={cambiarEstadoModal1}>
+          <h1>{t("laundry")}</h1>
+        </Modal>
+
+        <Modal estado={estadoModal2} cambiarEstado={cambiarEstadoModal2}>
+          <h1>{t("wifi")}</h1>
+        </Modal>
+
+        <Modal estado={estadoModal3} cambiarEstado={cambiarEstadoModal3}>
+          <h1>{t("bike")}</h1>
+        </Modal>
+
+        <Modal estado={estadoModal4} cambiarEstado={cambiarEstadoModal4}>
+          <h1>{t("breakfast")}</h1>
+        </Modal>
       </div>
+
       <div ref={galeriaRef} className="galeria">
         {t("gallery")}
       </div>
