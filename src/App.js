@@ -2,13 +2,14 @@ import logo from "./images/logo.svg";
 import React, { useRef } from "react";
 import { useState } from "react";
 import "./styles/App.css";
-import "./styles/Navbar.css";
+
 //import { Routes, Route, useNavigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import { withNamespaces } from "react-i18next";
 import i18n from "./i18n";
 import { FloatingWhatsApp } from "@carlos8a/react-whatsapp-floating-button";
 import Map from "./components/Map.js";
+import Modal from "./components/modal";
 import logo_cranes from "./images/cranes.png";
 import {
   MdLocalLaundryService,
@@ -16,7 +17,6 @@ import {
   MdElectricBike,
   MdCoffee,
 } from "react-icons/md";
-import Modal from "./components/modal";
 
 function App({ t }) {
   const localizacionRef = useRef(null);
@@ -46,9 +46,14 @@ function App({ t }) {
       <div className="Navbar">
         <img className="logo" src={logo} alt="Logo" />
 
-        <div className="languageButton">
-          <button onClick={() => changeLanguage("es")}>es</button>
-          <button onClick={() => changeLanguage("en")}>en</button>
+        <div className="languageButtons">
+          <button onClick={() => changeLanguage("es")} className="boton-idioma">
+            es
+          </button>
+          |
+          <button onClick={() => changeLanguage("en")} className="boton-idioma">
+            en
+          </button>
         </div>
 
         <ul>

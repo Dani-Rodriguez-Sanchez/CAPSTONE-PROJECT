@@ -9,6 +9,37 @@
 }
 
 
+.Navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background: rgb(163, 164, 164);
+  padding: 30px 30px 30px 30px;
+}
+
+
+
+.logo {
+  height: 60px;
+  position: absolute;
+  left: 7px;
+  top: 7px;
+}
+
+.languageButtons {
+  position: absolute;
+  left: 100px;
+  top: 28px;
+  background-color: none;
+}
+
+.boton-idioma {
+  background-color: none;
+  border: none;
+  height: 30px;
+  width: 30px;
+  text-decoration: none;
+}
 
 
 .presentacion {
@@ -82,12 +113,8 @@ white;
   padding: 100px; 
   align-items: center;
   justify-content: space-between;
-  
-  
-}
-
-
-
+  overflow: hidden;
+  }
 
 .galeria {
   height: 600px;
@@ -111,12 +138,15 @@ white;
   margin: 2px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
- 
-}
+ }
 
 .buttons:hover {
-  background-color: #008CBA;
+  background-color: #f5f588;
   color: white;
+}
+
+.languageButton {
+
 }
 
 /* scroll to top button */
@@ -150,8 +180,7 @@ white;
   }
   .buttons {
     display: block;
-    font-size: 1.5rem;
-    
+    font-size: 1.5rem;  
   }
   
   .logo_cranes {
@@ -160,8 +189,7 @@ white;
   }
 
   .presentacion_logo_text {
-  
-    flex-direction: column;  
+      flex-direction: column;  
   }
 
   .servicios {
@@ -171,6 +199,7 @@ white;
     font-size: 18px;
     text-align: center
   }
+
   .services-icons {
     display: flex;
   flex-direction: column; 
@@ -178,6 +207,5 @@ white;
   gap: 10px;
     
   }
-
 }
 
