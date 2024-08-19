@@ -5,7 +5,6 @@
 
 .App {
   text-align: center;
- 
 }
 
 
@@ -14,10 +13,9 @@
   align-items: center;
   justify-content: space-evenly;
   background: rgb(163, 164, 164);
-  padding: 30px 30px 30px 30px;
+  padding: 30px 30px 30px 250px;
+  
 }
-
-
 
 .logo {
   height: 60px;
@@ -28,17 +26,21 @@
 
 .languageButtons {
   position: absolute;
-  left: 100px;
-  top: 28px;
-  background-color: none;
+  left: 80px;
+  top: 20px;
+  background-color: none; 
 }
 
 .boton-idioma {
-  background-color: none;
+  background-color: transparent;
   border: none;
-  height: 30px;
-  width: 30px;
   text-decoration: none;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.boton-idioma:hover {
+  color: rgb(200, 200, 155);
 }
 
 
@@ -117,8 +119,14 @@ white;
   }
 
 .galeria {
-  height: 600px;
-  background-color: brown;
+  height: 400px;
+  background-color: rgb(147, 93, 93);
+  padding: 28px;
+  top: 50%;
+}
+
+.images-carousel {
+  height: 300px;
 }
 
 .contacto {
@@ -141,12 +149,8 @@ white;
  }
 
 .buttons:hover {
-  background-color: #f5f588;
+  background-color: #bfbf97;
   color: white;
-}
-
-.languageButton {
-
 }
 
 /* scroll to top button */
@@ -173,10 +177,14 @@ white;
   border: 2px solid #fff;
 }
 
+
+
+
+
 @media (max-width: 768px){
   .Navbar {
     height: 280px;
-   
+    padding: 15px 25px 15px 200px;
   }
   .buttons {
     display: block;
@@ -202,9 +210,9 @@ white;
 
   .services-icons {
     display: flex;
-  flex-direction: column; 
-  padding: 40px; 
-  gap: 10px;
+    flex-direction: column; 
+    padding: 40px; 
+    gap: 10px;
     
   }
 }

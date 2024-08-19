@@ -14,12 +14,12 @@
   width: 500px;
   min-height: 100px;
   background: #5a5959;
-  top: 0;
   position: relative;
   padding: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: translatey(-50%);
   
 }
 
