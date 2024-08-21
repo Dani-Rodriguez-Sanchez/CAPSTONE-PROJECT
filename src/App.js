@@ -9,7 +9,6 @@ import { withNamespaces } from "react-i18next";
 import i18n from "./i18n";
 import { FloatingWhatsApp } from "@carlos8a/react-whatsapp-floating-button";
 
-
 import Map from "./components/Map.js";
 import Modal from "./components/modal";
 import Responsive from "./components/carousel";
@@ -145,9 +144,11 @@ function App({ t }) {
       </div>
 
       <div ref={galeriaRef} className="galeria">
-        <div className="galeria-carousel">
-          <Responsive/>
-          
+        <div>
+          <div>
+            <Responsive />
+          </div>
+          <h1 className="titulo-carousel">{t("gallery")}</h1>
         </div>
       </div>
       <div ref={contactoRef} className="contacto">

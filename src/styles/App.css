@@ -118,17 +118,23 @@ white;
   overflow: hidden;
   }
 
+
+
 .galeria {
   height: 400px;
   background-color: rgb(147, 93, 93);
   padding: 28px;
   top: 50%;
+  color: white;
 }
 
 .images-carousel {
   height: 300px;
 }
 
+.titulo-carousel {
+  padding: 50px;
+}
 .contacto {
   height: 600px;
   background-color: lightgrey;
@@ -156,6 +162,7 @@ white;
 /* scroll to top button */
 .top-btn-position {
   position: fixed;
+  z-index: 3;
   bottom: 30px;
   left: 30px;
 }
