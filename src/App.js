@@ -12,6 +12,7 @@ import { FloatingWhatsApp } from "@carlos8a/react-whatsapp-floating-button";
 import Map from "./components/Map.js";
 import Modal from "./components/modal";
 import Responsive from "./components/carousel";
+import Blog from "./pages/Blog.js";
 
 import logo_cranes from "./images/cranes.png";
 import {
@@ -153,7 +154,9 @@ function App({ t }) {
       </div>
       <div ref={contactoRef} className="contacto">
         {t("contact")}
-        <img src="./images/carousel/ages1.webp" alt="" />
+        <div>
+          <Blog />
+        </div>
       </div>
       <h1>{t("Welcome to React")}</h1>
 
