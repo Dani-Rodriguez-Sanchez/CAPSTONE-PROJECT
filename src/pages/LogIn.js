@@ -8,8 +8,8 @@ import * as yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { userSignInAction } from "../redux/actions/userAction";
-import Navbar from "../components/BlogNavbar";
-import Footer from "../components/BlogFooter";
+import BlogNavbar from "../components/BlogNavbar";
+import BlogFooter from "../components/BlogFooter";
 
 const validationSchema = yup.object({
   email: yup
@@ -51,7 +51,7 @@ const LogIn = () => {
 
   return (
     <>
-      <Navbar />
+      <BlogNavbar />
       <Box
         sx={{
           height: "81vh",
@@ -129,7 +129,7 @@ const LogIn = () => {
           </Box>
         </Box>
       </Box>
-      <Footer />
+      <BlogFooter />
     </>
   );
 };

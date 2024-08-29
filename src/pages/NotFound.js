@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 const NotFound = () => {
-  return;
-  <>
-    <h1>Not Found</h1>
-  </>;
+  return (
+    <>
+      <h2>Not Found</h2>
+    </>
+  );
 };
 
 export default NotFound;

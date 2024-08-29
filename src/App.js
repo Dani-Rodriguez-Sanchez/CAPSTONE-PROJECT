@@ -149,7 +149,7 @@ function App({ t }) {
           <div>
             <Responsive />
           </div>
-          <h1 className="titulo-carousel">{t("gallery")}</h1>
+          <h1 className="titulo-carousel">{t("enjoy")}</h1>
         </div>
       </div>
       <div ref={contactoRef} className="contacto">

@@ -7,22 +7,22 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
+//import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import HouseIcon from "@mui/icons-material/House";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-//import { userLogoutAction } from "../redux/actions/userAction";
-//import { useDispatch, useSelector } from "react-redux";
+import { userLogoutAction } from "../redux/actions/userAction";
+import { useDispatch, useSelector } from "react-redux";
 
 const pages = ["Home", "Log In"];
 
 const BlogNavbar = () => {
-  //const dispatch = useDispatch();
-  //const navigate = useNavigate();
-  //const { userInfo } = useSelector((state) => state.signIn);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { userInfo } = useSelector((state) => state.signIn);
 
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
@@ -43,38 +43,19 @@ const BlogNavbar = () => {
   };
 
   // log out user
-  //const logOutUser = () => {
-  // dispatch(userLogoutAction());
-  // window.location.reload(true);
-  // setTimeout(() => {
-  //  navigate("/");
-  // }, 500);
-  //};
+  const logOutUser = () => {
+    dispatch(userLogoutAction());
+    window.location.reload(true);
+    setTimeout(() => {
+      navigate("/");
+    }, 500);
+  };
 
   return (
     <AppBar position="static">
       <Container>
         {/* principal Menu */}
         <Toolbar disableGutters>
-          <HouseIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            BLOG
-          </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -111,7 +92,7 @@ const BlogNavbar = () => {
               ))}
             </Menu>
           </Box>
-          <HouseIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+
           <Typography
             variant="h6"
             noWrap
@@ -127,9 +108,7 @@ const BlogNavbar = () => {
               color: "inherit",
               textDecoration: "none",
             }}
-          >
-            BLOG
-          </Typography>
+          ></Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {/* menu desktop */}
 

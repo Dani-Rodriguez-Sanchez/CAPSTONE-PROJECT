@@ -1,22 +1,22 @@
-import { Box } from "@mui/material";
+import { Box, CircularProgress } from "@mui/material";
 import React from "react";
 
-const BlogFooter = () => {
+const Loader = () => {
   return (
     <>
       <Box
         sx={{
-          bgcolor: "rgba(0,0,0,.7)",
-          height: "60px",
+          width: "100%",
+          minHeight: "500px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
-        <Box sx={{ color: "#fafafa" }}></Box>
+        <CircularProgress />
       </Box>
     </>
   );
 };
 
-export default BlogFooter;
+export default Loader;
