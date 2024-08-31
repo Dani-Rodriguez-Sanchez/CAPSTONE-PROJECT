@@ -10,8 +10,8 @@ import Avatar from "@mui/material/Avatar";
 //import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import HouseIcon from "@mui/icons-material/House";
-
+//import HouseIcon from "@mui/icons-material/House";
+import Paper from "@mui/material/Paper";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { userLogoutAction } from "../redux/actions/userAction";
@@ -57,16 +57,6 @@ const BlogNavbar = () => {
         {/* principal Menu */}
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -141,7 +131,7 @@ const BlogNavbar = () => {
               </IconButton>
             </Tooltip>
             <Menu
-              PaperProps={{
+              Paper={{
                 sx: {
                   "& 	.MuiMenu-list": {
                     bgcolor: "primary.white",

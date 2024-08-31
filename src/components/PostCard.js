@@ -35,10 +35,10 @@ const PostCard = ({
   const addLike = async () => {
     try {
       const { data } = await axios.put(`/api/addlike/post/${id}`);
-      // console.log("likes", data.post);
-      // if (data.success == true) {
-      //     showPosts();
-      // }
+      console.log("likes", data.post);
+      if (data.success === true) {
+        showPosts();
+      }
     } catch (error) {
       console.log(error.response.data.error);
       toast.error(error.response.data.error);
@@ -50,7 +50,7 @@ const PostCard = ({
     try {
       const { data } = await axios.put(`/api/removelike/post/${id}`);
       console.log("remove likes", data.post);
-      if (data.success == true) {
+      if (data.success === true) {
         showPosts();
       }
     } catch (error) {

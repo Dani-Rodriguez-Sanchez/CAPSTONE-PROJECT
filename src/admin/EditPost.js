@@ -10,6 +10,7 @@ import "react-quill/dist/quill.snow.css";
 import { modules } from "../components/moduleToolbar";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import BlogNavbar from "../components/BlogNavbar";
 
 const validationSchema = yup.object({
   title: yup
@@ -89,6 +90,7 @@ const EditPost = () => {
 
   return (
     <>
+      <BlogNavbar />
       <Box sx={{ bgcolor: "white", padding: "20px 200px" }}>
         <Typography variant="h5" sx={{ pb: 4 }}>
           {" "}

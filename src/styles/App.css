@@ -132,12 +132,13 @@ white;
   height: 300px;
 }
 
-.titulo-carousel {
-  padding: 50px;
+.titulos {
+  padding: 40px;
 }
-.contacto {
-  height: 1000px;
-  background-color: lightgrey;
+.articulo {
+  color: #1976d2
+  
+ 
 }
 
 .buttons {

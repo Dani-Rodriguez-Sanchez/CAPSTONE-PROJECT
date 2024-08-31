@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { modules } from "../components/moduleToolbar";
+import BlogNavbar from "../components/BlogNavbar";
 
 const validationSchema = yup.object({
   title: yup
@@ -56,6 +57,7 @@ const CreatePost = () => {
 
   return (
     <>
+      <BlogNavbar />
       <Box sx={{ bgcolor: "white", padding: "20px 200px" }}>
         <Typography variant="h5" sx={{ pb: 4 }}>
           {" "}

@@ -6,11 +6,8 @@ const BlogFooter = () => {
     <>
       <Box
         sx={{
-          bgcolor: "rgba(0,0,0,.7)",
+          bgcolor: "black",
           height: "60px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
         }}
       >
         <Box sx={{ color: "#fafafa" }}></Box>

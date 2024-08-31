@@ -20,7 +20,7 @@ const SidebarAdm = () => {
 
   useEffect(() => {
     dispatch(userProfileAction());
-  }, []);
+  }, [dispatch]);
 
   //log out
   const logOut = () => {
@@ -67,6 +67,7 @@ const SidebarAdm = () => {
             >
               {userInfo && userInfo.role === "admin" ? (
                 <>
+                  ADMIN
                   <MenuItem
                     component={<Link to="/admin/dashboard" />}
                     icon={<DashboardIcon />}
@@ -84,12 +85,12 @@ const SidebarAdm = () => {
                 </>
               ) : (
                 <>
+                  USER
                   <MenuItem
                     component={<Link to="/user/dashboard" />}
                     icon={<DashboardIcon />}
                   >
-                    {" "}
-                    Dashboard{" "}
+                    Dashboard
                   </MenuItem>
                 </>
               )}

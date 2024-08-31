@@ -26,7 +26,7 @@ function App({ t }) {
   const localizacionRef = useRef(null);
   const serviciosRef = useRef(null);
   const galeriaRef = useRef(null);
-  const contactoRef = useRef(null);
+  const articuloRef = useRef(null);
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
@@ -73,7 +73,7 @@ function App({ t }) {
           <li onClick={() => scrollToSection(galeriaRef)} className="buttons">
             {t("gallery")}
           </li>
-          <li onClick={() => scrollToSection(contactoRef)} className="buttons">
+          <li onClick={() => scrollToSection(articuloRef)} className="buttons">
             {t("contact")}
           </li>
         </ul>
@@ -100,7 +100,7 @@ function App({ t }) {
       </div>
 
       <div ref={serviciosRef} className="servicios">
-        <h1>{t("services")}</h1>
+        <h1 className="titulos">{t("services")}</h1>
         <div className="services-icons">
           <div>
             <button onClick={() => cambiarEstadoModal1(!estadoModal1)}>
@@ -149,18 +149,15 @@ function App({ t }) {
           <div>
             <Responsive />
           </div>
-          <h1 className="titulo-carousel">{t("enjoy")}</h1>
+          <h1 className="titulos">{t("enjoy")}</h1>
         </div>
       </div>
-      <div ref={contactoRef} className="contacto">
-        {t("contact")}
+      <div ref={articuloRef} className="articulo">
+        <h1 className="titulos">{t("articles")}</h1>
         <div>
           <Blog />
         </div>
-      </div>
-      <h1>{t("Welcome to React")}</h1>
 
-      <div>
         <FloatingWhatsApp
           phoneNumber="635723824"
           accountName="Albergue Las Garzas"

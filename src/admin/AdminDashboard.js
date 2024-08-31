@@ -9,6 +9,7 @@ import IconButton from "@mui/material/IconButton";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import EditIcon from "@mui/icons-material/Edit";
 import { toast } from "react-toastify";
+import BlogNavbar from "../components/BlogNavbar";
 
 const AdminDashboard = () => {
   const [posts, setPosts] = useState([]);
@@ -114,42 +115,45 @@ const AdminDashboard = () => {
   ];
 
   return (
-    <Box>
-      <Typography variant="h4" sx={{ color: "black", pb: 3 }}>
-        Posts
-      </Typography>
-      <Box sx={{ pb: 2, display: "flex", justifyContent: "right" }}>
-        <Button variant="contained" color="success" startIcon={<AddIcon />}>
-          <Link
-            style={{ color: "white", textDecoration: "none" }}
-            to="/admin/post/create"
-          >
-            Create Post
-          </Link>{" "}
-        </Button>
-      </Box>
-      <Paper sx={{ bgcolor: "white" }}>
-        <Box sx={{ height: 400, width: "100%" }}>
-          <DataGrid
-            getRowId={(row) => row._id}
-            sx={{
-              "& .MuiTablePagination-displayedRows": {
-                color: "black",
-              },
-              color: "black",
-              [`& .${gridClasses.row}`]: {
-                bgcolor: "white",
-              },
-            }}
-            rows={posts}
-            columns={columns}
-            pageSize={3}
-            rowsPerPageOptions={[3]}
-            checkboxSelection
-          />
+    <>
+      <BlogNavbar />
+      <Box>
+        <Typography variant="h4" sx={{ color: "black", pb: 3 }}>
+          Posts
+        </Typography>
+        <Box sx={{ pb: 2, display: "flex", justifyContent: "right" }}>
+          <Button variant="contained" color="success" startIcon={<AddIcon />}>
+            <Link
+              style={{ color: "white", textDecoration: "none" }}
+              to="/admin/post/create"
+            >
+              Create Post
+            </Link>{" "}
+          </Button>
         </Box>
-      </Paper>
-    </Box>
+        <Paper sx={{ bgcolor: "white" }}>
+          <Box sx={{ height: 400, width: "100%" }}>
+            <DataGrid
+              getRowId={(row) => row._id}
+              sx={{
+                "& .MuiTablePagination-displayedRows": {
+                  color: "black",
+                },
+                color: "black",
+                [`& .${gridClasses.row}`]: {
+                  bgcolor: "white",
+                },
+              }}
+              rows={posts}
+              columns={columns}
+              pageSize={3}
+              rowsPerPageOptions={[3]}
+              checkboxSelection
+            />
+          </Box>
+        </Paper>
+      </Box>
+    </>
   );
 };
 
