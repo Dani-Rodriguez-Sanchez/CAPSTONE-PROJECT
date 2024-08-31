@@ -40,6 +40,7 @@
     "react-slick": "^0.30.2",
     "react-split": "^2.0.14",
     "react-textarea-autosize": "^8.5.3",
+    "react-toastify": "^10.0.5",
     "react-toastify-redux": "^1.0.0-rc.2",
     "redux": "^5.0.1",
     "redux-thunk": "^3.1.0",

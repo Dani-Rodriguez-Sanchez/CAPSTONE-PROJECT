@@ -2,7 +2,7 @@ import "../styles/blog.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home.js";
 import NotFound from "../pages/NotFound.js";
-import { ToastContainer } from "react-toastify";
+
 import "react-toastify/dist/ReactToastify.css";
 import { ProSidebarProvider } from "react-pro-sidebar";
 import { Provider } from "react-redux";
@@ -27,7 +27,6 @@ const UserDashboardHOC = Layout(UserDashboard);
 const Blog = () => {
   return (
     <>
-      <ToastContainer />
       <Provider store={store}>
         <ProSidebarProvider>
           <BrowserRouter>
