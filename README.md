@@ -1,4 +1,5 @@
 src/images/tech-logos.png
+[<img src="images/tech-logos.png">]
 
 
 # Getting Started with Create React App
