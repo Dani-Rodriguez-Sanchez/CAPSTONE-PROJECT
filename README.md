@@ -1,7 +1,7 @@
 
 ![tech-logos](https://github.com/user-attachments/assets/52b6894e-e9af-433f-94e2-9d7c3e41fdf4)
 
-[capstone las grullas.pdf](https://github.com/user-attachments/files/16835567/capstone.las.grullas.pdf)
+
 
 
 # Getting Started with Create React App
