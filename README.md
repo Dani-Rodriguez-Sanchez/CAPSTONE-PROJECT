@@ -1,5 +1,5 @@
 
-![tech-logos](https://github.com/user-attachments/assets/52b6894e-e9af-433f-94e2-9d7c3e41fdf4)
+
 
 
 
