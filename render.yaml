@@ -1,9 +1,36 @@
+# Exported from Render on 2024-09-09T10:54:39Z
 services:
-  - type: pserv
-    name: mongodb
-    env: docker
-    autoDeploy: false
-    disk:
-      name: data
-      mountPath: /data/db
-      sizeGB: 10
+  - type: web
+    name: CAPSTONE-PROJECT-12
+    runtime: node
+    repo: https://github.com/Dani-Rodriguez-Sanchez/CAPSTONE-PROJECT
+    plan: free
+    envVars:
+      - key: NODE_VERSION
+        sync: false
+      - key: PORT
+        sync: false
+      - key: MONGODB_URI
+        sync: false
+    region: frankfurt
+    buildCommand: " npm run "
+    startCommand: node app.js
+    rootDir: backend
+  - type: web
+    name: CAPSTONE-PROJECT
+    runtime: static
+    repo: https://github.com/Dani-Rodriguez-Sanchez/CAPSTONE-PROJECT
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: NODE_VERSION
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: PORT
+        sync: false
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
+version: "1"
